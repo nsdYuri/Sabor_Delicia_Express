@@ -13,3 +13,17 @@ opcao_escolhida = int(input("Escolha uma opção: "))
 # opcao_escolhida = int(opcao_escolhida)
 print(f"Opção escolhida: {opcao_escolhida}")
 
+# Funções que iram exercer aquilo que o usuario escolher fazer 
+def cadastra_restaurante():
+    print("Cadastando restaurante...")
+
+def lista_restaurante():
+    print("Listando restaurante...")
+
+def ativa_restaurante():
+    print("Ativando restaurante...")
+
+def sair():
+    os.system('cls') # Windows
+    #os.system('clear') Mackbook
+    print("Saindo...\n")
