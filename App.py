@@ -1,4 +1,5 @@
 import os
+os.system('cls')
 
 def exibe_nome_programa():
     print("𝓢𝓪𝓫𝓸𝓻 𝓓𝓮𝓵𝓲́𝓬𝓲𝓪 𝓔𝔁𝓹𝓻𝓮𝓼𝓼\n")
@@ -25,6 +26,12 @@ def sair():
     #os.system('clear') Mackbook
     print("Saindo...\n")
 
+def opcao_invalida():
+    print("Opção invalida!\n")
+    input("Digite a tecla Enter para voltar ao menu principal...")
+    os.system('cls')
+    main()
+
 def escolhe_opcao():
     # Pegar a informação do usuário
     opcao_escolhida = int(input("Escolha uma opção: "))
@@ -41,7 +48,7 @@ def escolhe_opcao():
     elif opcao_escolhida == 4:
         sair()
     else:
-        print("Opção indisponivel.")
+        opcao_invalida()
 
     # Alternativa para o if, elif, else = match (funciona como um switch case)
     
