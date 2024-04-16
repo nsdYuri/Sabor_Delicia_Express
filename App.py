@@ -1,6 +1,7 @@
 import os
 
-print("𝓢𝓪𝓫𝓸𝓻 𝓓𝓮𝓵𝓲́𝓬𝓲𝓪 𝓔𝔁𝓹𝓻𝓮𝓼𝓼\n")
+def exbir_nome_programa():
+    print("𝓢𝓪𝓫𝓸𝓻 𝓓𝓮𝓵𝓲́𝓬𝓲𝓪 𝓔𝔁𝓹𝓻𝓮𝓼𝓼\n")
 
 # Menu de opções 
 print("1. Cadastrar Restaurante")
@@ -39,3 +40,10 @@ elif opcao_escolhida == 4:
     sair()
 else:
     print("Opção indisponivel.")
+
+# Criando função main, que ira exclusivamente rodar aquilo que está no principal
+def main():
+    exbir_nome_programa
+
+if __name__ == '__main__':
+    main()
