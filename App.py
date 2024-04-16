@@ -43,6 +43,21 @@ def escolhe_opcao():
     else:
         print("Opção indisponivel.")
 
+    # Alternativa para o if, elif, else = match (funciona como um switch case)
+    
+    # match opcao_escolhida:
+    #     case 1:
+    #         cadastra_restaurante()
+    #     case 2:
+    #         lista_restaurante()
+    #     case 3:
+    #         ativa_restaurante()
+    #     case 4:
+    #         sair()
+    #     case _:
+    #         print("Opção indisponivel")
+    
+
 # Criando função main, que ira exclusivamente rodar aquilo que está no principal
 def main():
     exibe_nome_programa()
