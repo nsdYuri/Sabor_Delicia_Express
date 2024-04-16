@@ -27,3 +27,15 @@ def sair():
     os.system('cls') # Windows
     #os.system('clear') Mackbook
     print("Saindo...\n")
+
+# Condicional que executa a função que corresponde a opção escolhida pelo usuário
+if opcao_escolhida == 1:
+    cadastra_restaurante()
+elif opcao_escolhida == 2:
+    lista_restaurante()
+elif opcao_escolhida == 3:
+    ativa_restaurante()
+elif opcao_escolhida == 4:
+    sair()
+else:
+    print("Opção indisponivel.")
