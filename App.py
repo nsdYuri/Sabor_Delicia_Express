@@ -38,16 +38,20 @@ def escolhe_opcao():
     # opcao_escolhida = int(opcao_escolhida)
     print(f"Opção escolhida: {opcao_escolhida}")
 
-    # Condicional que executa a função que corresponde a opção escolhida pelo usuário
-    if opcao_escolhida == 1:
-        cadastra_restaurante()
-    elif opcao_escolhida == 2:
-        lista_restaurante()
-    elif opcao_escolhida == 3:
-        ativa_restaurante()
-    elif opcao_escolhida == 4:
-        sair()
-    else:
+# tramaento de excessões que ira tentar relizar uma tarefa, caso ela seja direcionada para um erro, o código tenta executar outra função.
+    try:
+        # Condicional que executa a função que corresponde a opção escolhida pelo usuário
+        if opcao_escolhida == 1:
+            cadastra_restaurante()
+        elif opcao_escolhida == 2:
+            lista_restaurante()
+        elif opcao_escolhida == 3:
+            ativa_restaurante()
+        elif opcao_escolhida == 4:
+            sair()
+        else:
+            opcao_invalida()
+    except:
         opcao_invalida()
 
     # Alternativa para o if, elif, else = match (funciona como um switch case)
