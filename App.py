@@ -10,11 +10,6 @@ def exibe_menu():
     print("3. Ativar Restaurante")
     print("4. Sair\n")
 
-# Pegar a informação do usuário
-opcao_escolhida = int(input("Escolha uma opção: "))
-# opcao_escolhida = int(opcao_escolhida)
-print(f"Opção escolhida: {opcao_escolhida}")
-
 # Funções que iram exercer aquilo que o usuario escolher fazer 
 def cadastra_restaurante():
     print("Cadastando restaurante...")
@@ -30,22 +25,29 @@ def sair():
     #os.system('clear') Mackbook
     print("Saindo...\n")
 
-# Condicional que executa a função que corresponde a opção escolhida pelo usuário
-if opcao_escolhida == 1:
-    cadastra_restaurante()
-elif opcao_escolhida == 2:
-    lista_restaurante()
-elif opcao_escolhida == 3:
-    ativa_restaurante()
-elif opcao_escolhida == 4:
-    sair()
-else:
-    print("Opção indisponivel.")
+def escolhe_opcao():
+    # Pegar a informação do usuário
+    opcao_escolhida = int(input("Escolha uma opção: "))
+    # opcao_escolhida = int(opcao_escolhida)
+    print(f"Opção escolhida: {opcao_escolhida}")
+
+    # Condicional que executa a função que corresponde a opção escolhida pelo usuário
+    if opcao_escolhida == 1:
+        cadastra_restaurante()
+    elif opcao_escolhida == 2:
+        lista_restaurante()
+    elif opcao_escolhida == 3:
+        ativa_restaurante()
+    elif opcao_escolhida == 4:
+        sair()
+    else:
+        print("Opção indisponivel.")
 
 # Criando função main, que ira exclusivamente rodar aquilo que está no principal
 def main():
     exibe_nome_programa()
     exibe_menu()
+    escolhe_opcao()
 
 if __name__ == '__main__':
     main()
