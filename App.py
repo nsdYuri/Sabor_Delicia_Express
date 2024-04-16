@@ -8,3 +8,8 @@ print("2. Listar Restaurante")
 print("3. Ativar Restaurante")
 print("4. Sair\n")
 
+# Pegar a informação do usuário
+opcao_escolhida = int(input("Escolha uma opção: "))
+# opcao_escolhida = int(opcao_escolhida)
+print(f"Opção escolhida: {opcao_escolhida}")
+
