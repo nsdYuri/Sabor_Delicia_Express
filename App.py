@@ -2,7 +2,7 @@ import os
 os.system('cls') # Comando para limpar o terminal toda vez que rodarmos o programa
 
 # Criando uma lista vazia dos restaurantes que serão cadastrados
-dados_restaurante = []
+dados_restaurante = ['Dhaigo', 'Outback']
 
 # Função que exibe o nome do sistema
 def exibe_nome_programa():
@@ -17,15 +17,26 @@ def exibe_menu():
     print("4. Sair\n")
 
 # Funções que iram exercer aquilo que o usuario escolher fazer 
+
+def retornar_ao_menu():
+    input("\nDigite a tecla Enter para voltar ao menu principal...")
+    os.system('cls')
+    main()
+    
 def cadastra_restaurante():
     os.system('cls')
     print("Cadastrando novo restaurante...\n")
     nome_restaurante = input("Informe o nome do restaurante: ")
     dados_restaurante.append(nome_restaurante)
-    print(f"Restarurante: {nome_restaurante} cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
-
+    print(f"Restarurante: {nome_restaurante} foi cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
+    retornar_ao_menu()
+    
 def lista_restaurante():
-    print("Listando restaurante...")
+    os.system('cls')
+    print("Lista de restaurantes:")
+    for restaurante in dados_restaurante:
+        print(restaurante)
+    retornar_ao_menu()
 
 def ativa_restaurante():
     print("Ativando restaurante...")
@@ -37,18 +48,15 @@ def sair():
 
 def opcao_invalida():
     print("Opção invalida!\n")
-    input("Digite a tecla Enter para voltar ao menu principal...")
-    os.system('cls')
-    main()
+    retornar_ao_menu()
+    
 
 def escolhe_opcao():
     # Pegar a informação do usuário
     opcao_escolhida = int(input("Escolha uma opção: "))
     # opcao_escolhida = int(opcao_escolhida)
     print(f"Opção escolhida: {opcao_escolhida}")
-
-# tramaento de excessões que ira tentar relizar uma tarefa, caso ela seja direcionada para um erro, o código tenta executar outra função.
-    try:
+    try: # tramaento de excessões que ira tentar relizar uma tarefa, caso ela seja direcionada para um erro, o código tenta executar outra função.
         # Condicional que executa a função que corresponde a opção escolhida pelo usuário
         if opcao_escolhida == 1:
             cadastra_restaurante()
