@@ -16,7 +16,7 @@ def exibe_menu():
 # Funções que iram exercer aquilo que o usuario escolher fazer 
 def cadastra_restaurante():
     os.system('cls')
-    print("Cadastrando novo restaurante:\n")
+    print("Cadastrando novo restaurante...\n")
     nome_restaurante = input("Informe o nome do restaurante: ")
     dados_restaurante.append(nome_restaurante)
     print(f"Restarurante: {nome_restaurante} cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
