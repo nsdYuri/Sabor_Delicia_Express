@@ -1,11 +1,14 @@
 import os
-os.system('cls')
+os.system('cls') # Comando para limpar o terminal toda vez que rodarmos o programa
 
+# Criando uma lista vazia dos restaurantes que serão cadastrados
 dados_restaurante = []
 
+# Função que exibe o nome do sistema
 def exibe_nome_programa():
     print("𝓢𝓪𝓫𝓸𝓻 𝓓𝓮𝓵𝓲́𝓬𝓲𝓪 𝓔𝔁𝓹𝓻𝓮𝓼𝓼\n")
 
+# Função que exibe o menu de opções
 def exibe_menu():
     # Menu de opções 
     print("1. Cadastrar Restaurante")
