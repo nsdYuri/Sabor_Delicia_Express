@@ -3,7 +3,9 @@ os.system('cls') # Comando para limpar o terminal toda vez que rodarmos o progra
 #os.system('clear') Mackbook
 
 # Criando uma lista vazia dos restaurantes que serão cadastrados
-dados_restaurante = ['Dhaigo', 'Outback']
+restaurantes = [{"Nome":"Dhaigo", "Categoria":"Japonesa", "Ativo":True},
+               {"Nome":"Piemonte", "Categoria":"Italiana", "Ativo":False},
+               {"Nome":"Habibbs", "Categoria":"Árabe", "Ativo":True}]
 
 # Função que exibe o nome do sistema
 def exibe_nome_programa():
@@ -32,14 +34,23 @@ def exibir_subtitulo(texto):
 def cadastra_restaurante():
     exibir_subtitulo("Cadastrando novo restaurante...\n")
     nome_restaurante = input("Informe o nome do restaurante: ")
-    dados_restaurante.append(nome_restaurante)
+    categoria_restaurante = input(f"Informe a categoria do restaurante - {nome_restaurante}: ")
+    dados_restaurante = {"Nome":nome_restaurante, 
+                         "Categoria":categoria_restaurante, 
+                         "Ativo":False}
+    restaurantes.append(dados_restaurante)
     print(f"Restarurante: {nome_restaurante} foi cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
     retornar_ao_menu()
     
 def lista_restaurante():
     exibir_subtitulo("Lista de restaurantes:")
-    for restaurante in dados_restaurante:
-        print(restaurante)
+    
+    for restaurante in restaurantes:
+        nome_restaurante = restaurante["Nome"]
+        categoria_restaurante = restaurante["Categoria"]
+        ativo = restaurante["Ativo"]
+        print(f" - {nome_restaurante} | {categoria_restaurante} | {ativo}")
+        
     retornar_ao_menu()
 
 def ativa_restaurante():
