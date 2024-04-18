@@ -1,5 +1,6 @@
 import os
 os.system('cls') # Comando para limpar o terminal toda vez que rodarmos o programa
+#os.system('clear') Mackbook
 
 # Criando uma lista vazia dos restaurantes que serão cadastrados
 dados_restaurante = ['Dhaigo', 'Outback']
@@ -23,28 +24,29 @@ def retornar_ao_menu():
     os.system('cls')
     main()
     
-def cadastra_restaurante():
+def exibir_subtitulo(texto):
     os.system('cls')
-    print("Cadastrando novo restaurante...\n")
+    print(texto)
+    print()
+    
+def cadastra_restaurante():
+    exibir_subtitulo("Cadastrando novo restaurante...\n")
     nome_restaurante = input("Informe o nome do restaurante: ")
     dados_restaurante.append(nome_restaurante)
     print(f"Restarurante: {nome_restaurante} foi cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
     retornar_ao_menu()
     
 def lista_restaurante():
-    os.system('cls')
-    print("Lista de restaurantes:")
+    exibir_subtitulo("Lista de restaurantes:")
     for restaurante in dados_restaurante:
         print(restaurante)
     retornar_ao_menu()
 
 def ativa_restaurante():
-    print("Ativando restaurante...")
+    exibir_subtitulo("Ativando restaurante...")
 
 def sair():
-    os.system('cls') # Windows
-    #os.system('clear') Mackbook
-    print("Saindo...\n")
+    exibir_subtitulo("Encerrando...\n")
 
 def opcao_invalida():
     print("Opção invalida!\n")
@@ -53,18 +55,19 @@ def opcao_invalida():
 
 def escolhe_opcao():
     # Pegar a informação do usuário
-    opcao_escolhida = int(input("Escolha uma opção: "))
+    opcao_escolhida = input("Escolha uma opção: ")
     # opcao_escolhida = int(opcao_escolhida)
     print(f"Opção escolhida: {opcao_escolhida}")
-    try: # tramaento de excessões que ira tentar relizar uma tarefa, caso ela seja direcionada para um erro, o código tenta executar outra função.
-        # Condicional que executa a função que corresponde a opção escolhida pelo usuário
-        if opcao_escolhida == 1:
+    
+    # tramaento de excessões que ira tentar relizar uma tarefa, caso ela seja direcionada para um erro, o código tenta executar outra função.
+    try:
+        if opcao_escolhida == "1":
             cadastra_restaurante()
-        elif opcao_escolhida == 2:
+        elif opcao_escolhida == "2":
             lista_restaurante()
-        elif opcao_escolhida == 3:
+        elif opcao_escolhida == "3":
             ativa_restaurante()
-        elif opcao_escolhida == 4:
+        elif opcao_escolhida == "4":
             sair()
         else:
             opcao_invalida()
