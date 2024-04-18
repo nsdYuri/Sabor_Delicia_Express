@@ -1,6 +1,8 @@
 import os
 os.system('cls')
 
+dados_restaurante = []
+
 def exibe_nome_programa():
     print("𝓢𝓪𝓫𝓸𝓻 𝓓𝓮𝓵𝓲́𝓬𝓲𝓪 𝓔𝔁𝓹𝓻𝓮𝓼𝓼\n")
 
@@ -13,7 +15,11 @@ def exibe_menu():
 
 # Funções que iram exercer aquilo que o usuario escolher fazer 
 def cadastra_restaurante():
-    print("Cadastando restaurante...")
+    os.system('cls')
+    print("Cadastrando novo restaurante:\n")
+    nome_restaurante = input("Informe o nome do restaurante: ")
+    dados_restaurante.append(nome_restaurante)
+    print(f"Restarurante: {nome_restaurante} cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
 
 def lista_restaurante():
     print("Listando restaurante...")
