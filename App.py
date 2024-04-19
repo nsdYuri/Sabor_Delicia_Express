@@ -39,7 +39,7 @@ def cadastra_restaurante():
                          "Categoria":categoria_restaurante, 
                          "Ativo":False}
     restaurantes.append(dados_restaurante)
-    print(f"Restarurante: {nome_restaurante} foi cadastrado com sucesso! \( ͡ᵔ ͜ʖ ͡ᵔ)/")
+    print(f"Restarurante: {nome_restaurante} foi cadastrado com sucesso! <( ͡ᵔ ͜ʖ ͡ᵔ)>")
     retornar_ao_menu()
     
 def lista_restaurante():
@@ -48,13 +48,27 @@ def lista_restaurante():
     for restaurante in restaurantes:
         nome_restaurante = restaurante["Nome"]
         categoria_restaurante = restaurante["Categoria"]
-        ativo = restaurante["Ativo"]
+        ativo = "Ativado" if restaurante["Ativo"] else "Desativado" # Estrutura de Ternário: Condicional em uma linha apenas
         print(f" - {nome_restaurante} | {categoria_restaurante} | {ativo}")
         
     retornar_ao_menu()
 
-def ativa_restaurante():
-    exibir_subtitulo("Ativando restaurante...")
+def ativa_ou_desativa_restaurante():
+    exibir_subtitulo("Alterando status do restaurante:")
+    nome_restaurante = input("Informe do nome do restaurante que deseja alterar o status: ")
+    restaurante_escolhido = False
+    
+    for restaurante in restaurantes:
+        if nome_restaurante == restaurante["Nome"]:
+            restaurante_escolhido = True
+            restaurante["Ativo"] = not restaurante["Ativo"]
+            mensagem = f"O restaurante {nome_restaurante} foi ativado com sucesso" if restaurante["Ativo"] else f"O restaurante {nome_restaurante} foi desativado"
+            print(mensagem)
+    if not restaurante_escolhido:
+        print("Restaurante não encontrado")
+    # if not restaurante_escolhido: # Como a variavel restaurante_escolhido é false, o not ira tranforma-la em True e executar o if
+    #     print("Restaurante não encontrado.")
+    retornar_ao_menu()
 
 def sair():
     exibir_subtitulo("Encerrando...\n")
@@ -77,7 +91,7 @@ def escolhe_opcao():
         elif opcao_escolhida == "2":
             lista_restaurante()
         elif opcao_escolhida == "3":
-            ativa_restaurante()
+            ativa_ou_desativa_restaurante()
         elif opcao_escolhida == "4":
             sair()
         else:
