@@ -28,7 +28,10 @@ def retornar_ao_menu():
     
 def exibir_subtitulo(texto):
     os.system('cls')
+    linha = '-' * len(texto)
+    print(linha)
     print(texto)
+    print(linha)
     print()
     
 def cadastra_restaurante():
@@ -45,11 +48,12 @@ def cadastra_restaurante():
 def lista_restaurante():
     exibir_subtitulo("Lista de restaurantes:")
     
+    print(f"{"RESTAURANTE:".ljust(23)} | {"CATEGORIA:".ljust(20)} | STATUS:")
     for restaurante in restaurantes:
         nome_restaurante = restaurante["Nome"]
         categoria_restaurante = restaurante["Categoria"]
         ativo = "Ativado" if restaurante["Ativo"] else "Desativado" # Estrutura de Ternário: Condicional em uma linha apenas
-        print(f" - {nome_restaurante} | {categoria_restaurante} | {ativo}")
+        print(f" - {nome_restaurante.ljust(20)} | {categoria_restaurante.ljust(20)} | {ativo.ljust(20)}")
         
     retornar_ao_menu()
 
